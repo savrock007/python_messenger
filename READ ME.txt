@@ -1,0 +1,51 @@
+*server.py  has to be launched first
+
+*After server.py is launched and running client1.py and client2.py
+
+
+
+*All python files have to run on the same computer from the same folder to avoid errors
+* Programs have to run on the same computer because client1.py and client2.py will try to connect to ip 127.0.0.1 which is loopback IP of the computer and if server.py is not running on the same computer connection will not be successful
+
+
+____________IMPORTANT_______________
+*always close client programs before closing server.py in order to avoid ‘[Errno 48] Address already in use’
+If this error has occurred:
+STEP1 : 
+you will have to close all of the currently running programs 
+STEP2:
+wait 1-2minutes
+STEP3:
+Try running server.py again
+If error still occurs go to STEP1
+----------------------------------------------------------------
+
+----------------------*NOT RECOMMENDED *----------------------------
+This feature was not tested because I did not have two separate machines-->*** server.py and client.py programs can only be run on separate machines if ip in both programs is changed 
+In order to do that 
+In ‘server.py’ program in line 399 or right at the bottom of the code,  
+in line ‘server.bind(‘localhost’,8080)’  ‘localhost’ has to be changed to the private ip address of the computer on which server.py is run
+
+In ‘client.py’ in class Client in __init()__ function 
+self.s, self.Sym_Key = self.connect('localhost', 8080)
+‘localhost’ has to be changed to the same IP as  you have put in server.py form the previous step
+
+
+
+___________CREDENTIALS FOR USERS CREATED FOR TEST __________
+
+TEST_USER1:
+
+Username: test_user1
+Password: 1234
+
+TEST_USER2:
+
+Username: test_user2
+Password:1234
+
+ADMIN_USER:
+Username: admin
+Password: admin
+-________________________________________________________
+
